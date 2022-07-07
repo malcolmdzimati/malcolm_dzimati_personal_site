@@ -1,8 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoList from './TodoList';
+import React from 'react';
 
 function App() {
-    return null
+    return ( 
+        <TodoList /> 
+    )
 }
 
 export default App;
