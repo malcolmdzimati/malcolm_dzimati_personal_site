@@ -2,9 +2,10 @@ import TodoList from './TodoList';
 import React from 'react';
 
 function App() {
+    const [todos, setToDos] = useState();
     return ( 
         <>
-          <TodoList />
+          <TodoList todos={todos}/>
           <input type='text'></input>
           <button>Add To Do</button>
           <button>Clear To Do</button>
