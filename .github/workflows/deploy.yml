@@ -28,9 +28,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install Tailwind PostCSS Plugin
-        run: yarn add -D @tailwindcss/postcss
-
       - name: Build Project
         run: yarn build
 
