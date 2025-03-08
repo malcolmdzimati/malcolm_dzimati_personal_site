@@ -42,6 +42,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # 🔥 This allows pushing to gh-pages
+      pages: write     # 🔥 Enables GitHub Pages deployment
+      id-token: write  # 🔥 Required for OIDC authentication
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -50,10 +55,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-files
-          path: dist # Change if needed
+          path: dist  # Change if using CRA
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist # Change to 'build' if using Create React App
+          folder: dist  # Change to 'build' if using CRA
+          token: ${{ secrets.GITHUB_TOKEN }}  # 🔥 Use GitHub Token
