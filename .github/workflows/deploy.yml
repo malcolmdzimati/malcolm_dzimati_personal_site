@@ -28,6 +28,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Install Tailwind PostCSS Plugin
+        run: yarn add -D @tailwindcss/postcss
+
       - name: Build Project
         run: yarn build
 
@@ -35,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-files
-          path: dist # Change to 'build' if using Create React App
+          path: build # Change to 'build' if using Create React App
 
   deploy:
     name: Deploy to GitHub Pages
@@ -50,10 +53,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-files
-          path: dist # Change if needed
+          path: build # Change if needed
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist # Change to 'build' if using Create React App
+          folder: build # Change to 'build' if using Create React App
