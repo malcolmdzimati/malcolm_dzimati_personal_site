@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
-  base: './',  
   build: {
-    outDir: 'dist',  
-  }
+    outDir: 'dist',
+    emptyOutDir: true,
+    assetsInlineLimit: 4096, // Keeps assets small
+    rollupOptions: {
+      output: {
+        manualChunks: undefined, // Prevent excessive chunking
+      },
+    },
+  },
 });
