@@ -1,5 +1,3 @@
- import Navbar from '../components/ui/navbar';
-
 function About() {
     return  (
     <div>
