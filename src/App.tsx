@@ -9,8 +9,8 @@ function App() {
     <>
     <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="malcolm_dzimati_personal_site/" element={<Home />} />
+        <Route path="malcolm_dzimati_personal_site/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

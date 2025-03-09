@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
      <nav>
        <ul>
          <li>
-           <Link to="/">Home</Link>
+           <Link to="malcolm_dzimati_personal_site/">Home</Link>
          </li>
          <li>
-           <Link to="/about">About</Link>
+           <Link to="malcolm_dzimati_personal_site/about">About</Link>
          </li>
          <li>
            <Link to="/contact">Contact</Link>
