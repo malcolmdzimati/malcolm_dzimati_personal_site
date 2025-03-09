@@ -1,5 +1,14 @@
-function Home() {
-    return <h1>Welcome to My Personal Website</h1>;
-  }
-  
-  export default Home;
+import { Ripple } from "../components/magicui/ripple";
+
+export function Home() {
+  return (
+    <div className="relative flex h-[1000px] w-[1000px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-white">
+        Ripple
+      </p>
+      <Ripple />
+    </div>
+  );
+}
+
+export default Home;
