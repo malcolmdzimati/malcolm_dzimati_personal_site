@@ -1,5 +1,11 @@
+ import Navbar from '../components/ui/navbar';
+
 function About() {
-    return <h1>About Me</h1>;
+    return  (
+    <div>
+      <h1>About Me</h1>;
+    </div>
+    );
   }
   
   export default About;
