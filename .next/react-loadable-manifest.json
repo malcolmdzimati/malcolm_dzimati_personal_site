@@ -1,0 +1,26 @@
+{
+  "node_modules/@heroui/navbar/dist/chunk-63OA3RRZ.mjs -> @heroui/dom-animation": {
+    "id": 9438,
+    "files": [
+      "static/chunks/438.d7df4af792d216a8.js"
+    ]
+  },
+  "node_modules/@heroui/navbar/dist/chunk-GGZP2VLD.mjs -> @heroui/dom-animation": {
+    "id": 9438,
+    "files": [
+      "static/chunks/438.d7df4af792d216a8.js"
+    ]
+  },
+  "node_modules/@heroui/ripple/dist/chunk-QHRCZSEO.mjs -> @heroui/dom-animation": {
+    "id": 9438,
+    "files": [
+      "static/chunks/438.d7df4af792d216a8.js"
+    ]
+  },
+  "node_modules/@heroui/tooltip/dist/chunk-BWXGEJBS.mjs -> @heroui/dom-animation": {
+    "id": 9438,
+    "files": [
+      "static/chunks/438.d7df4af792d216a8.js"
+    ]
+  }
+}
