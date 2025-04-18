@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import AnimatedLayout from "@/components/animatedlayout";
+import { Providers } from "./providers"; // ✅ Import your providers
 
 export const metadata: Metadata = {
   title: {
@@ -18,10 +19,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-white text-black dark:bg-black dark:text-white">
-      <body>
-        <Navbar />
-        <AnimatedLayout>{children}</AnimatedLayout>
+    <html
+      lang="en"
+      className="bg-white text-black dark:bg-black dark:text-white"
+      suppressHydrationWarning // ✅ Helps avoid dark/light mismatch on hydration
+    >
+      <body className={fontSans.variable}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "system", enableSystem: true }}>
+          <Navbar />
+          <AnimatedLayout>{children}</AnimatedLayout>
+        </Providers>
       </body>
     </html>
   );
