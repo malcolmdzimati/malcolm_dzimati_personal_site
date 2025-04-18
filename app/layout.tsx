@@ -1,3 +1,6 @@
+ "use client";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
@@ -32,6 +35,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const path = usePathname();
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -45,7 +49,18 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={path}
+                  initial={{ rotateY: 90, opacity: 0 }}
+                  animate={{ rotateY: 0, opacity: 1 }}
+                  exit={{ rotateY: -90, opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="w-full h-full"
+                >
+                  {children}
+                </motion.div>
+              </AnimatePresence>
             </main>
             <footer className="w-full flex items-center justify-center py-3">
               <Link

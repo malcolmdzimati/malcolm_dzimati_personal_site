@@ -1,3 +1,5 @@
+ "use client";
+import { motion } from "framer-motion";
 import { Link } from "@heroui/link";
 import { Snippet } from "@heroui/snippet";
 import { Code } from "@heroui/code";
@@ -9,7 +11,12 @@ import { GithubIcon } from "@/components/icons";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <motion.section
+      initial={{ rotateY: 90, opacity: 0 }}
+      animate={{ rotateY: 0, opacity: 1 }}
+      exit={{ rotateY: -90, opacity: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-xl text-center justify-center">
         <span className={title()}>Make&nbsp;</span>
         <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
@@ -51,6 +58,6 @@ export default function Home() {
           </span>
         </Snippet>
       </div>
-    </section>
+    </motion.section>
   );
 }
