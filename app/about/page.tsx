@@ -5,8 +5,8 @@ export default function AboutPage() {
     <div className="max-w-3xl mx-auto p-6 space-y-6">
       <h1 className={title()}>About</h1>
       <p className="text-lg">
-        Hey, I’m <strong>Batsirai Malcolm Dzimati</strong> — a software developer, entrepreneur, and lifelong learner
-        with a passion for technology, business, and property. I currently work in the fintech space,
+        Hey, I’m <strong>Batsirai Malcolm Dzimati</strong> — a software & cryptography engineer, entrepreneur, and lifelong learner
+        with a passion for technology, business, and property. I currently work in the transactional banking space,
         where I've contributed to secure payment systems, fraud detection tools, and large-scale infrastructure
         projects. I love solving complex problems and building efficient systems that create real-world impact.
       </p>
@@ -22,11 +22,11 @@ export default function AboutPage() {
       </p>
       <p className="text-lg">
         This site is a window into my journey — the things I’m building, learning, and thinking about. Feel free to
-        <a href="/contact" className="text-blue-600 hover:underline"> reach out</a> if you want to connect.
+        <a href="/malcolm_dzimati_personal_site/contact" className="text-blue-600 hover:underline"> reach out</a> if you want to connect.
       </p>
       <h2 className="text-xl font-semibold pt-6">Background</h2>
       <ul className="list-disc pl-5 text-lg space-y-2">
-        <li>📚 BSc & Honours in Computer Science – [Your University]</li>
+        <li>📚 BSc & Honours in Computer Science – University of Pretoria</li>
         <li>💼 Software Engineer – Investec (2023–present)</li>
         <li>🏠 Founder – Rota Ventures (Property portfolio & tools)</li>
       </ul>
