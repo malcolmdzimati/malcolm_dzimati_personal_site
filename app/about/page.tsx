@@ -24,6 +24,12 @@ export default function AboutPage() {
         This site is a window into my journey — the things I’m building, learning, and thinking about. Feel free to
         <a href="/contact" className="text-blue-600 hover:underline"> reach out</a> if you want to connect.
       </p>
+      <h2 className="text-xl font-semibold pt-6">Background</h2>
+      <ul className="list-disc pl-5 text-lg space-y-2">
+        <li>📚 BSc & Honours in Computer Science – [Your University]</li>
+        <li>💼 Software Engineer – Investec (2023–present)</li>
+        <li>🏠 Founder – Rota Ventures (Property portfolio & tools)</li>
+      </ul>
     </div>
   );
 }
