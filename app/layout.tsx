@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-white text-black dark:bg-black dark:text-white"
+      className="bg-white text-black dark:bg-[#121212] dark:text-white"
       suppressHydrationWarning // ✅ Helps avoid dark/light mismatch on hydration
     >
       <body className={fontSans.variable}>

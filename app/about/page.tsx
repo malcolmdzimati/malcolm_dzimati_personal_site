@@ -11,7 +11,7 @@ export default function AboutPage() {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="flex items-center justify-center min-h-screen px-4"
     >
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg max-w-3xl w-full space-y-6">
+      <div className="bg-white text-black dark:bg-[#1e1e1e] dark:text-white p-8 rounded-2xl shadow-xl max-w-3xl w-full space-y-6">
         <h1 className={title()}>About</h1>
         <p className="text-lg">
           Hey, I’m <strong>Batsirai Malcolm Dzimati</strong> — a software & cryptography engineer, entrepreneur, and lifelong learner

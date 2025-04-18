@@ -4,7 +4,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex items-center justify-center min-h-screen px-4 py-12 bg-white dark:bg-gray-950">
+    <section className="flex items-center justify-center min-h-screen px-4 py-12 bg-white text-black dark:bg-[#121212] dark:text-white">
       <div className="w-full max-w-4xl">{children}</div>
     </section>
   );
