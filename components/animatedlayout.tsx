@@ -1,5 +1,4 @@
 "use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +12,6 @@ export default function AnimatedLayout({ children }: { children: React.ReactNode
           key={path}
           initial={{ rotateY: 90, opacity: 0 }}
           animate={{ rotateY: 0, opacity: 1 }}
-          exit={{ rotateY: -90, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="w-full h-full"
         >
