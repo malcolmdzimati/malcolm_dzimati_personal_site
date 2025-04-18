@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className="max-w-3xl mx-auto p-6 space-y-6">
       <h1 className={title()}>About</h1>
       <p className="text-lg">
-        Hey, I’m <strong>Your Name</strong> — a software developer, entrepreneur, and lifelong learner
+        Hey, I’m <strong>Batsirai Malcolm Dzimati</strong> — a software developer, entrepreneur, and lifelong learner
         with a passion for technology, business, and property. I currently work in the fintech space,
         where I've contributed to secure payment systems, fraud detection tools, and large-scale infrastructure
         projects. I love solving complex problems and building efficient systems that create real-world impact.
