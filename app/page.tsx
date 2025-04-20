@@ -51,7 +51,7 @@ export default function Home() {
           { title: "Consulting", description: "Need help? Here's how I can add value.", href: "/contact" },
         ].map((card, index) => (
           <Link key={card.title} href={card.href}>
-            <Card className="h-40 hover:scale-105 transition-transform cursor-pointer">
+            <Card className="h-40 cursor-pointer">
               <CardContent className="flex flex-col justify-center items-start h-full p-4">
                 <h3 className="text-xl font-semibold">{card.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{card.description}</p>

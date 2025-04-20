@@ -86,29 +86,51 @@ export default function CVPage() {
       </section>
 
       {/* Skills */}
-      <section>
+      <motion.section
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
         <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-        <Card>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 text-gray-800 dark:text-white">
-            <div>
-              <h3 className="font-semibold">Languages</h3>
-              <p>Java, C#, C++, Python, Angular</p>
-            </div>
-            <div>
-              <h3 className="font-semibold">Cloud & DevOps</h3>
-              <p>Azure, CI/CD, Containers, Helm, Kubernetes</p>
-            </div>
-            <div>
-              <h3 className="font-semibold">Storage</h3>
-              <p>Postgres, SQL</p>
-            </div>
-            <div>
-              <h3 className="font-semibold">Cryptography</h3>
-              <p>PayShield, Luna HSM, Secure Key Mgmt</p>
-            </div>
-          </div>
-        </Card>
-      </section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {[
+            { title: 'Languages', skills: ['Java', 'C#', 'C++', 'Python', 'Angular'] },
+            { title: 'Cloud & DevOps', skills: ['Azure', 'CI/CD', 'Containers', 'Helm', 'Kubernetes'] },
+            { title: 'Storage', skills: ['Postgres', 'SQL'] },
+            { title: 'Cryptography', skills: ['PayShield', 'Luna HSM', 'Secure Key Mgmt'] },
+          ].map(({ title, skills }) => (
+            <motion.div
+              key={title}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, type: 'spring' }}
+            >
+              <Card className="p-6">
+                <h3 className="font-semibold text-lg mb-2">{title}</h3>
+                <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
+                  {skills.map(skill => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
       {/* Certifications */}
       <section>
