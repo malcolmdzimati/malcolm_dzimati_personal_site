@@ -32,9 +32,9 @@ export const Navbar = () => {
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+          <NextLink className="flex justify-start items-center gap-1" href="/" onClick={onClose}>
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">BMD</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -84,7 +84,7 @@ export const Navbar = () => {
             <GithubIcon className="text-default-500" />
           </Link>
         <ThemeSwitch />
-        <NavbarMenuToggle onPress={isOpen ? onClose : onOpen} />
+        <NavbarMenuToggle onClick={isOpen ? onClose : onOpen} />
       </NavbarContent>
 
       <NavbarMenu>
@@ -95,7 +95,7 @@ export const Navbar = () => {
                 color="foreground"
                 href={item.href}
                 size="lg"
-                onPress={onClose}
+                onClick={onClose}
               >
                 {item.label}
               </Link>
