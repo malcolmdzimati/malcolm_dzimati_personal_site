@@ -20,6 +20,10 @@ export const siteConfig = {
       label: "Contact",
       href: "/contact",
     },
+    { 
+      label: "Digital CV",
+      href: "/cv",
+    },
   ],
   navMenuItems: [
     {
@@ -37,6 +41,10 @@ export const siteConfig = {
     { 
       label: "Contact",
       href: "/contact",
+    },
+    { 
+      label: "Digital CV",
+      href: "/cv",
     },
   ],
   links: {
