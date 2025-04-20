@@ -1,10 +1,11 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import type { ComponentPropsWithoutRef } from "react";
 
 export const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  ComponentPropsWithoutRef<typeof motion.div>
 >(({ className, ...props }, ref) => (
   <motion.div
     ref={ref}
