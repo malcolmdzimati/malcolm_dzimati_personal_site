@@ -5,18 +5,25 @@ import { Card } from "@/components/ui/card";
 import { CardContent } from "@/components/ui/card-content";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <motion.section
       initial={{ rotateY: 90, opacity: 0 }}
-      animate={{ rotateY: 0, opacity: 1 }}
+      animate={mounted ? { rotateY: 0, opacity: 1 } : {}}
       exit={{ rotateY: -90, opacity: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-white text-black dark:bg-[#121212] dark:text-white">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={mounted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.1, duration: 0.6 }}
         className="text-center space-y-4 mt-20"
       >
@@ -40,7 +47,7 @@ export default function Home() {
       {/* Cards Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={mounted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.3, duration: 0.6 }}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl mt-16"
       >
@@ -64,7 +71,7 @@ export default function Home() {
       {/* Footer */}
       <motion.footer
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={mounted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.5, duration: 0.6 }}
         className="w-full text-center mt-20 border-t pt-6 text-sm text-muted-foreground"
       >
