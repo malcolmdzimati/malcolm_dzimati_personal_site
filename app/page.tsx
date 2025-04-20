@@ -1,15 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
 import { button as buttonStyles } from "@heroui/theme";
 import { Card } from "@/components/ui/card";
 import { CardContent } from "@/components/ui/card-content";
-
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -19,6 +13,20 @@ export default function Home() {
       exit={{ rotateY: -90, opacity: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-white text-black dark:bg-[#121212] dark:text-white">
+      <section className="text-center space-y-4 mt-20">
+        <h1 className="text-4xl font-bold">Malcolm Dzimati</h1>
+        <p className="text-lg text-muted-foreground">
+          Software Engineer | Tech Innovator | Property Investor
+        </p>
+        <p className="text-base mt-2">
+          Building tech with purpose. Investing in systems that scale.
+        </p>
+        <div className="space-x-4 mt-4">
+          <Button>View Projects</Button>
+          <Button variant="outline">About Me</Button>
+        </div>
+      </section>
+
       {/* Cards Section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl mt-16">
         {[
