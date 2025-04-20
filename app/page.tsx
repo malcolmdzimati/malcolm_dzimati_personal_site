@@ -14,7 +14,12 @@ export default function Home() {
       exit={{ rotateY: -90, opacity: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-white text-black dark:bg-[#121212] dark:text-white">
-      <section className="text-center space-y-4 mt-20">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1, duration: 0.6 }}
+        className="text-center space-y-4 mt-20"
+      >
         <h1 className="text-4xl font-bold">Batsirai Malcolm Dzimati</h1>
         <p className="text-lg text-muted-foreground">
           Software Engineer | Tech Innovator | Property Investor
@@ -30,10 +35,15 @@ export default function Home() {
             <Button variant="outline">About Me</Button>
           </Link>
         </div>
-      </section>
+      </motion.div>
 
       {/* Cards Section */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl mt-16">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl mt-16"
+      >
         {[
           { title: "Projects", description: "View my tech work and experiments.", href: "/projects" },
           { title: "Property", description: "How I manage and grow my portfolio.", href: "/property" },
@@ -49,12 +59,17 @@ export default function Home() {
             </Card>
           </Link>
         ))}
-      </section>
+      </motion.div>
 
       {/* Footer */}
-      <footer className="w-full text-center mt-20 border-t pt-6 text-sm text-muted-foreground">
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        className="w-full text-center mt-20 border-t pt-6 text-sm text-muted-foreground"
+      >
         © {new Date().getFullYear()} Batsirai Malcolm Dzimati. Built with Next.js + React + ShadCN.
-      </footer>
+      </motion.footer>
     </motion.section>
   );
 }
