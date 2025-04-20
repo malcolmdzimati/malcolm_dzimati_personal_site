@@ -74,13 +74,13 @@ export default function CVPage() {
             date="2023 – 2024"
             title="BSc Honours in Computer Science"
             subtitle="University of Pretoria"
-            points={['GPA: 59']}
+            points={['Focus: Software Engineering, Cybersecurity']}
           />
           <TimelineItem
             date="2020 – 2022"
             title="BSc Computer Science & Statistics"
             subtitle="University of Pretoria"
-            points={['GPA: 68']}
+            points={['Focus: Data Science, Software Engineering, Cybersecurity']}
           />
         </div>
       </section>
