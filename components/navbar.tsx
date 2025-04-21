@@ -74,9 +74,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
+          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedIn}>
+            <LinkedInIcon className="text-default-500" />
+          </Link>
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
