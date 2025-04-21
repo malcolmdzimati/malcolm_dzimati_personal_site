@@ -6,11 +6,11 @@ import AnimatedLayout from "@/components/animatedlayout";
 import { Providers } from "./providers"; // ✅ Import your providers
 
 export const metadata: Metadata = {
-  title: {
-    default: "Malcolm Dzimati",
-    template: `%s - Malcolm Dzimati`,
+  title: "BMD – Batsirai Malcolm Dzimati",
+  description: "Portfolio of Batsirai Malcolm Dzimati – Software Engineer & Innovator",
+  icons: {
+    icon: "/Logo.png", // path to your icon file
   },
-  description: "Personal website for Batsirai Malcolm Dzimati",
 };
 
 export default function RootLayout({
