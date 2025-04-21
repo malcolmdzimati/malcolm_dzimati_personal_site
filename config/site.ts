@@ -17,12 +17,12 @@ export const siteConfig = {
       href: "/projects",
     },
     { 
-      label: "Contact",
-      href: "/contact",
-    },
-    { 
       label: "Digital CV",
       href: "/cv",
+    },
+    { 
+      label: "Contact",
+      href: "/contact",
     },
   ],
   navMenuItems: [
@@ -39,12 +39,12 @@ export const siteConfig = {
       href: "/projects",
     },
     { 
-      label: "Contact",
-      href: "/contact",
-    },
-    { 
       label: "Digital CV",
       href: "/cv",
+    },
+    { 
+      label: "Contact",
+      href: "/contact",
     },
   ],
   links: {

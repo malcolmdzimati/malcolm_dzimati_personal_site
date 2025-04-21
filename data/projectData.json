@@ -12,11 +12,27 @@
       "tags": ["Containers", "C#", "SQL", "Helm", "Kubernetes", "Event Driven Architecture"]
     },
     {
+      "title": "Personal Portfolio Website",
+      "description": "Showcased professional experience and projects.",
+      "details": "Developed a dynamic personal website to showcase professional experience, personal projects, and technical skills. Built using Next.js and deployed with Heroku via a GitHub Actions pipeline, the site features animated project cards, interactive filters, and a responsive design. Integrated Framer Motion for animations and Tailwind CSS for styling. This project reflects a strong focus on UI/UX design, modern web technologies, and responsive user experience across devices.",
+      "tags": ["Next.js", "Heroku", "GitHub Actions", "Framer Motion", "Tailwind CSS", "React"]
+    },
+    {
       "title": "Card Pin Change Kiosk & API Solution",
       "description": "Modernized and deployed secure card pin change solution.",
       "details": "Rewrote and modernized an API and UI-based card pin change kiosk solution, allowing users to securely verify and update their credit card PINs. Integrated PayShield HSMs and Luna HSMs for secure PIN verification and encryption. Implemented end-to-end encryption to protect client card data and ensure the security of PIN changes. Ensured compliance with banking security standards to safeguard sensitive customer transactions. The solution was deployed across South African offices, enabling clients to conveniently change their credit card PINs.",
       "tags": ["C#", "PayShield HSMs", "Luna HSMs", "Containers", "Card Scripting"]
+    },
+    {
+      "title": "Property Management & Tenant Tool",
+      "description": "Designed and developed tools to manage and scale a property portfolio.",
+      "details": "Built tools to streamline property acquisition, tenant vetting, acquisition, and management. Initiated a tenant management tool integrating WhatsApp for real-time communication and support. Oversaw the rental of multiple units while optimizing tenant interactions and property operations. The system allows scalable property management and improved responsiveness to tenant needs.",
+      "tags": [ "React", "Next.js", "Property", "C#", "WhatsApp API", "Automation", "Tenant Management"]
+    },
+    {
+      "title": "Fraud Detection Research",
+      "description": "Ongoing research to prevent transaction fraud using data analysis and detection techniques.",
+      "details": "Conducting a comprehensive study on fraud detection strategies with the goal of building smarter, more adaptive defenses against financial fraud. The task involves data analysis, anomaly detection, and the use of statistical models to identify fraudulent activity in transaction data. The research aims to form the foundation for an intelligent fraud prevention system in the banking sector.",
+      "tags": ["python", "Security", "Research", "Machine Learning", "Fraud Detection", "Data Analysis", "Anomaly Detection"]
     }
-    
-  ]
-  
+]

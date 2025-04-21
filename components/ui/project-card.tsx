@@ -64,14 +64,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, de
             <h3 className="text-xl font-semibold mb-2">{title}</h3>
             <p className="text-sm text-muted-foreground mb-3 whitespace-pre-wrap break-words">{description}</p>
             <div className="flex flex-wrap gap-2 text-xs">
-              {tags.map(tag => (
+              {tags.slice(0, 5).map(tag => (
                 <span key={tag} className="px-3 py-1 rounded-full border text-xs font-medium">
                   {tag}
                 </span>
               ))}
+              {tags.length > 5 && (
+                <span className="px-3 py-1 rounded-full border text-xs font-medium">
+                  ...
+                </span>
+              )}
             </div>
             {!isExpanded && (
-              <button className="mt-4 text-primary hover:underline text-sm dark:text-primary" onClick={onExpand}>
+              <button className="mt-4 text-primary hover:underline text-sm dark:text-primary" >
                 See More →
               </button>
             )}
