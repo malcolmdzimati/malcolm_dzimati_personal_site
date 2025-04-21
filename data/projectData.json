@@ -1,0 +1,22 @@
+[
+    {
+      "title": "Payment Modernisation",
+      "description": "Stabilized and optimized the new payment engine.",
+      "details": "Helped stabilize the newly introduced payment engine by refining logic, improving performance, and adding functionality to support operational processes. Optimized core transaction workflows, ensuring improved reliability and efficiency. Enhanced system performance, reducing processing delays and improving overall transaction speed. These improvements were aimed at increasing reliability and enhancing the client experience when initiating electronic payments.",
+      "tags": ["C#", "Angular", "SQL", "CI/CD", "Azure", "Cloud Services"]
+    },
+    {
+      "title": "3D Secure Service Optimization",
+      "description": "Improved the efficiency and resilience of the bank’s 3D Secure service.",
+      "details": "Improved the bank’s 3D Secure service efficiency by identifying and resolving bottlenecks in dependency integrations. Replaced polling methods with event-driven operations, reducing load and enhancing responsiveness. Strengthened observability by improving logging and dashboards, enabling faster issue detection and resolution. These enhancements ensured a smooth customer experience during heavy loads, such as Black Friday and Cyber Monday, while also allowing for easier investigation and debugging when clients require assistance.",
+      "tags": ["Containers", "C#", "SQL", "Helm", "Kubernetes", "Event Driven Architecture"]
+    },
+    {
+      "title": "Card Pin Change Kiosk & API Solution",
+      "description": "Modernized and deployed secure card pin change solution.",
+      "details": "Rewrote and modernized an API and UI-based card pin change kiosk solution, allowing users to securely verify and update their credit card PINs. Integrated PayShield HSMs and Luna HSMs for secure PIN verification and encryption. Implemented end-to-end encryption to protect client card data and ensure the security of PIN changes. Ensured compliance with banking security standards to safeguard sensitive customer transactions. The solution was deployed across South African offices, enabling clients to conveniently change their credit card PINs.",
+      "tags": ["C#", "PayShield HSMs", "Luna HSMs", "Containers", "Card Scripting"]
+    }
+    
+  ]
+  

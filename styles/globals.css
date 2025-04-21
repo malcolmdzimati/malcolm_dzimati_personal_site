@@ -6,3 +6,17 @@
 html {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  .perspective {
+    perspective: 1500px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .parent-container {
+    position: relative;
+  }
