@@ -8,11 +8,6 @@ on:
       - main
       
   workflow_dispatch:
-    inputs:
-      language:
-        description: 'Programming language to scan (e.g., javascript, python, etc.)'
-        required: true
-        default: 'javascript'
 
 permissions:
   contents: read
@@ -20,15 +15,5 @@ permissions:
   id-token: write
   
 jobs:
-  codeql-scan:
-    uses: /malcolmdzimati/.github/workflows/security/codeql_security_scan_job.yml@main
-    with:
-      language: ${{ github.event.inputs.language }}
-
-  build:
-    uses: malcolmdzimati/workflow-templates/.github/workflows/build_publish/react/build_react_job.yml@main
-    needs: codeql-scan # Ensures the build only runs if the CodeQL scan passes
-
-  deploy:
-    uses: malcolmdzimati/workflow-templates/.github/workflows/deploy/deploy_github_pages_job.yml@main
-    needs: build # Ensures the deploy only runs if the build passes
+  build_and_deploy:
+    uses: /malcolmdzimati/.github/workflows/build_deploy_nextjs_x_github_pages.yml@main
