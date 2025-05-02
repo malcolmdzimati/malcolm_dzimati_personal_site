@@ -15,13 +15,13 @@ permissions:
   id-token: write
   
 jobs:
-  codeql-scan:
+  javascript:
     uses: malcolmdzimati/workflow-templates/.github/workflows/codeql_security_scan_job.yml@main
 
-  build:
+  next-js:
     uses: malcolmdzimati/workflow-templates/.github/workflows/build_react_job.yml@main
-    needs: codeql-scan # Ensures the build only runs if the CodeQL scan passes
+    needs: javascript # Ensures the build only runs if the CodeQL scan passes
 
-  deploy:
+  github-pages:
     uses: malcolmdzimati/workflow-templates/.github/workflows/deploy_github_pages_job.yml@main
-    needs: build # Ensures the build only runs if the CodeQL scan passes
+    needs: next-js # Ensures the build only runs if the CodeQL scan passes
