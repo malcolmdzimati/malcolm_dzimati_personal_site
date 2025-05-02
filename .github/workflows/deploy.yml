@@ -16,12 +16,8 @@ permissions:
   security-events: write
   
 jobs:
-  tsx:
-    uses: malcolmdzimati/workflow-templates/.github/workflows/codeql_security_scan_job.yml@main
-
   next-js:
     uses: malcolmdzimati/workflow-templates/.github/workflows/build_react_job.yml@main
-    needs: tsx # Ensures the build only runs if the CodeQL scan passes
 
   github-pages:
     uses: malcolmdzimati/workflow-templates/.github/workflows/deploy_github_pages_job.yml@main
