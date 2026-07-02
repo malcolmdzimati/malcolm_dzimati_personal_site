@@ -1,38 +1,56 @@
 [
     {
+      "title": "Intelligent Insurance Analytics Dashboard",
+      "description": "AI-powered analytics platform surfacing business insights from millions of records for a major SA insurer.",
+      "details": "Architected and delivered a distributed analytics platform for a major South African insurance company, processing millions of records to surface key business insights. Implemented AI-powered anomaly detection, automated trend analysis, and executive reporting dashboards on distributed backend services, Snowflake, and cloud-native APIs.",
+      "tags": ["Python", "Snowflake", "Cloud-Native APIs", "AI/ML", "Anomaly Detection"]
+    },
+    {
+      "title": "Predictive Maintenance Platform",
+      "description": "Near real-time telemetry and predictive maintenance platform for 160+ industrial assets.",
+      "details": "Architected near real-time telemetry and predictive maintenance platforms processing operational data from 160+ industrial assets across 10+ integrated systems using event-driven architecture, Kafka, Snowflake, and cloud-native backend services. Built AI-powered RAG and agentic workflows (LangGraph, MCP tooling, vector retrieval) to generate maintenance diagnostics, repair recommendations, and automated fleet health summaries from OEM documentation and live operational telemetry.",
+      "tags": ["Python", "FastAPI", "Kafka", "Snowflake", "LangGraph", "RAG", "Cloud"]
+    },
+    {
+      "title": "Cryptography Platform",
+      "description": "High-performance cryptography platform underpinning a bank's logins, clearing house keys, and PIN operations.",
+      "details": "Maintained and improved a high-performance cryptography platform underpinning client logins and SOS, the bank's keys to the clearing house, all PIN operations, and bulk card printing. Ensured low-latency, highly reliable cryptographic services under heavy transactional load, integrating with HSMs (PayShield, Luna) for secure key management.",
+      "tags": ["C#", ".NET", "Java", "HSM", "SQL", "Azure"]
+    },
+    {
+      "title": "Token Management Platform",
+      "description": "Token issuance, rotation, and revocation workflows for secure card data handling.",
+      "details": "Built token issuance, rotation, and revocation workflows integrating with HSM cryptographic infrastructure. Ensured compliance with payment security standards for secure handling of sensitive card data.",
+      "tags": ["Payments", "Tokenisation", "HSM", "Security"]
+    },
+    {
       "title": "Payment Modernisation",
       "description": "Stabilized and optimized the new payment engine.",
-      "details": "Helped stabilize the newly introduced payment engine by refining logic, improving performance, and adding functionality to support operational processes. Optimized core transaction workflows, ensuring improved reliability and efficiency. Enhanced system performance, reducing processing delays and improving overall transaction speed. These improvements were aimed at increasing reliability and enhancing the client experience when initiating electronic payments.",
-      "tags": ["C#", "Angular", "SQL", "CI/CD", "Azure", "Cloud Services"]
+      "details": "Helped stabilize the newly introduced payment engine by refining logic, improving performance, and adding functionality to support operational processes. Improved transaction reliability and scalability across core payment systems, and optimised processing flows to reduce end-to-end latency — improving throughput during peak load events including Black Friday.",
+      "tags": ["C#", "Java", "SQL", "Azure", "CI/CD"]
     },
     {
       "title": "3D Secure Service Optimization",
-      "description": "Improved the efficiency and resilience of the bank’s 3D Secure service.",
-      "details": "Improved the bank’s 3D Secure service efficiency by identifying and resolving bottlenecks in dependency integrations. Replaced polling methods with event-driven operations, reducing load and enhancing responsiveness. Strengthened observability by improving logging and dashboards, enabling faster issue detection and resolution. These enhancements ensured a smooth customer experience during heavy loads, such as Black Friday and Cyber Monday, while also allowing for easier investigation and debugging when clients require assistance.",
-      "tags": ["Containers", "C#", "SQL", "Helm", "Kubernetes", "Event Driven Architecture"]
+      "description": "Improved the efficiency and resilience of the bank's 3D Secure service.",
+      "details": "Replaced synchronous polling with event-driven architecture, improving authentication responsiveness and reducing system load during peak transaction periods such as Black Friday and Cyber Monday. Strengthened observability by improving logging and dashboards, enabling faster issue detection and resolution — a pattern later adopted across multiple payment services.",
+      "tags": ["Payments", "Event-Driven Architecture", "Java", "Containers", "Kubernetes", "Helm"]
+    },
+    {
+      "title": "Secure PIN Change Kiosk",
+      "description": "Modernized and deployed a secure card PIN change kiosk and API solution.",
+      "details": "Built a full-stack PIN change kiosk application (Angular front end, C#/.NET back end) enabling clients to securely change and verify card PINs, integrating directly with HSM infrastructure (PayShield, Luna) for cryptographic PIN operations. Designed with end-to-end encryption and a security-first architecture, ensuring sensitive PIN data was never exposed in transit or at rest, and remained compliant with payment security standards. Deployed across South African offices.",
+      "tags": ["C#", ".NET", "Angular", "HSM", "Security", "Card Scripting"]
     },
     {
       "title": "Personal Portfolio Website",
       "description": "Showcased professional experience and projects.",
-      "details": "Developed a dynamic personal website to showcase professional experience, personal projects, and technical skills. Built using Next.js and deployed with Heroku via a GitHub Actions pipeline, the site features animated project cards, interactive filters, and a responsive design. Integrated Framer Motion for animations and Tailwind CSS for styling. This project reflects a strong focus on UI/UX design, modern web technologies, and responsive user experience across devices.",
-      "tags": ["Next.js", "Heroku", "GitHub Actions", "Framer Motion", "Tailwind CSS", "React"]
-    },
-    {
-      "title": "Card Pin Change Kiosk & API Solution",
-      "description": "Modernized and deployed secure card pin change solution.",
-      "details": "Rewrote and modernized an API and UI-based card pin change kiosk solution, allowing users to securely verify and update their credit card PINs. Integrated PayShield HSMs and Luna HSMs for secure PIN verification and encryption. Implemented end-to-end encryption to protect client card data and ensure the security of PIN changes. Ensured compliance with banking security standards to safeguard sensitive customer transactions. The solution was deployed across South African offices, enabling clients to conveniently change their credit card PINs.",
-      "tags": ["C#", "PayShield HSMs", "Luna HSMs", "Containers", "Card Scripting"]
+      "details": "Developed a dynamic personal website to showcase professional experience, personal projects, and technical skills. Built using Next.js and deployed via a GitHub Actions pipeline, the site features animated project cards, interactive filters, and a responsive design. Integrated Framer Motion for animations and Tailwind CSS for styling.",
+      "tags": ["Next.js", "GitHub Actions", "Framer Motion", "Tailwind CSS", "React"]
     },
     {
       "title": "Property Management & Tenant Tool",
       "description": "Designed and developed tools to manage and scale a property portfolio.",
       "details": "Built tools to streamline property acquisition, tenant vetting, acquisition, and management. Initiated a tenant management tool integrating WhatsApp for real-time communication and support. Oversaw the rental of multiple units while optimizing tenant interactions and property operations. The system allows scalable property management and improved responsiveness to tenant needs.",
-      "tags": [ "React", "Next.js", "Property", "C#", "WhatsApp API", "Automation", "Tenant Management"]
-    },
-    {
-      "title": "Fraud Detection Research",
-      "description": "Ongoing research to prevent transaction fraud using data analysis and detection techniques.",
-      "details": "Conducting a comprehensive study on fraud detection strategies with the goal of building smarter, more adaptive defenses against financial fraud. The task involves data analysis, anomaly detection, and the use of statistical models to identify fraudulent activity in transaction data. The research aims to form the foundation for an intelligent fraud prevention system in the banking sector.",
-      "tags": ["python", "Security", "Research", "Machine Learning", "Fraud Detection", "Data Analysis", "Anomaly Detection"]
+      "tags": ["React", "Next.js", "Property", "C#", "WhatsApp API", "Automation", "Tenant Management"]
     }
 ]

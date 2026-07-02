@@ -1,12 +1,21 @@
+"use client";
+
 import NextLink from "next/link";
 import { Link } from "@heroui/link";
+import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { GithubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
 
 export const Footer = () => {
   return (
     <footer className="border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
         <div className="text-center sm:text-left">
           <NextLink href="/" className="font-serif italic text-lg text-foreground">
             Malcolm Dzimati
@@ -29,7 +38,7 @@ export const Footer = () => {
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Batsirai Malcolm Dzimati
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 };

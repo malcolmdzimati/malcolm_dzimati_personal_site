@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Batsirai Malcolm Dzimati",
-  description: "Software engineer building secure payment systems and scalable property tools.",
+  description: "Software engineer building distributed systems, cloud platforms, and scalable property tools.",
   navItems: [
     {
       label: "Home",

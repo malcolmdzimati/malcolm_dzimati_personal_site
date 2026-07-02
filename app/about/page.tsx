@@ -4,28 +4,44 @@ import Link from "next/link";
 
 const background = [
   { label: "Education", value: "BSc & Honours in Computer Science — University of Pretoria" },
-  { label: "Role", value: "Software Engineer — Investec (2023–present)" },
-  { label: "Venture", value: "Founder — Rota Ventures (property portfolio & tools)" },
+  { label: "Role", value: "Forward Deployed Tech Lead, AI & Cloud Platforms — Vectr Labs (2025–present)" },
+  { label: "Previously", value: "Software Engineer, Payments & Cryptography — Investec (2023–2025)" },
+  { label: "Venture", value: "Founder — Rota Dzimati Group (property portfolio & tools)" },
 ];
 
 const paragraphs = [
   <>
-    Hey, I&rsquo;m <strong className="text-foreground">Batsirai Malcolm Dzimati</strong> — a software &
-    cryptography engineer, entrepreneur, and lifelong learner with a passion for technology, business,
-    and property. I currently work in the transactional banking space, where I&rsquo;ve contributed to
-    secure payment systems, fraud detection tools, and large-scale infrastructure projects. I love
-    solving complex problems and building efficient systems that create real-world impact.
+    Hey, I&rsquo;m <strong className="text-foreground">Batsirai Malcolm Dzimati</strong> — a software
+    engineer who likes taking systems from &ldquo;it works&rdquo; to &ldquo;it works under pressure.&rdquo;
+    These days that means leading architecture, cloud strategy, and applied-AI work at{" "}
+    <strong className="text-foreground">Vectr Labs</strong>, where I build production backend systems and
+    agentic workflows for clients on top of AWS and Azure.
   </>,
   <>
-    Beyond code, I run a small but growing property investment venture. I&rsquo;m deeply interested in
-    using automation and thoughtful design to manage rental properties at scale — blending technology
-    and real estate to create smarter living experiences.
+    My current focus is narrower and more specific than &ldquo;AI&rdquo; as a buzzword: using LLM tooling to
+    build distributed, performant systems that hold up in production — not demos. I spend a lot of time
+    probing how far LLMs can actually take a system on their own, and where a human still has to be in the
+    loop, because that boundary is the difference between a clever prototype and something you can put
+    real load on. I care just as much about the economics of it — making sure investment into LLM-powered
+    systems actually returns something — as I do about the R&amp;D side: fine-tuning, evaluation, and the
+    unglamorous work of figuring out what actually moves the needle.
   </>,
   <>
-    Long-term, I&rsquo;m focused on building ventures that matter, investing in both local and global
-    markets, and helping others level up along the way. Whether it&rsquo;s tech tools, financial
-    literacy, or infrastructure, I believe in learning by doing and creating opportunities through
-    innovation.
+    I got here by way of banking. Three years at Investec&rsquo;s payments and cryptography platform taught
+    me what &ldquo;can&rsquo;t go down&rdquo; actually means — on-call rotations for card and PIN systems,
+    HSM key ceremonies, event-driven rewrites during Black Friday load. That grounding in high-stakes,
+    zero-tolerance systems is the thread running through everything I&rsquo;ve built since, LLMs included.
+  </>,
+  <>
+    Outside of client work, I run <strong className="text-foreground">Rota Dzimati Group</strong>, a small but
+    growing property investment venture. I&rsquo;m drawn to the same problem in a different domain: using
+    automation and thoughtful tooling to manage rental properties at scale, rather than by spreadsheet and
+    guesswork.
+  </>,
+  <>
+    Long-term, I&rsquo;m focused on building ventures that matter — in tech and in property, locally and
+    further afield — and helping others level up along the way. I believe in learning by doing, and in
+    creating opportunities through innovation rather than waiting for them.
   </>,
 ];
 

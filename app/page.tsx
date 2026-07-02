@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowUpRightIcon } from "@/components/icons";
@@ -24,7 +25,7 @@ const wordItem = {
 const destinations = [
   {
     title: "Projects",
-    description: "Payment systems, cryptography, and property tools I've shipped.",
+    description: "Distributed systems, cloud platforms, and property tools I've shipped.",
     href: "/projects",
   },
   {
@@ -45,20 +46,43 @@ const destinations = [
 ];
 
 const highlights = [
-  "Software Engineer @ Investec",
-  "Payments & Cryptography",
-  "Founder, Rota Ventures",
-  "BSc Hons Computer Science",
+  "Tech Lead @ Vectr Labs",
+  "Distributed Systems & AI",
+  "Founder, Rota Dzimati Group",
+  "AWS & Azure Certified",
 ];
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const blobY3 = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
     <>
-      <section className="relative isolate overflow-hidden min-h-[92vh] flex flex-col items-center justify-center px-4">
+      <motion.section
+        ref={heroRef}
+        style={{ opacity: heroOpacity }}
+        className="relative isolate overflow-hidden min-h-[92vh] flex flex-col items-center justify-center px-4"
+      >
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-8 left-[8%] h-[30rem] w-[30rem] rounded-full bg-accent/40 blur-3xl animate-float-slow" />
-          <div className="absolute top-1/4 right-[6%] h-[26rem] w-[26rem] rounded-full bg-accent/30 blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-accent/20 blur-3xl animate-float-slow" />
+          <motion.div
+            style={{ y: blobY1 }}
+            className="absolute top-8 left-[8%] h-[30rem] w-[30rem] rounded-full bg-accent/40 blur-3xl animate-float-slow"
+          />
+          <motion.div
+            style={{ y: blobY2 }}
+            className="absolute top-1/4 right-[6%] h-[26rem] w-[26rem] rounded-full bg-accent/30 blur-3xl animate-float"
+          />
+          <motion.div
+            style={{ y: blobY3 }}
+            className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-accent/20 blur-3xl animate-float-slow"
+          />
         </div>
 
         <motion.p
@@ -130,7 +154,7 @@ export default function Home() {
             <path d="M12 4v16m0 0-6-6m6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
-      </section>
+      </motion.section>
 
       <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
         <motion.div

@@ -44,19 +44,38 @@ export default function ProjectsPage() {
       >
         {showFilters ? 'Hide Filters' : 'Filter Skills'}
       </button>
-      {showFilters && (
-        <div className="mb-4 flex flex-wrap gap-2">
-          {allTags.map(tag => (
-            <button
-              key={tag}
-              onClick={() => handleTagClick(tag)}
-              className={`px-4 py-2 rounded-full border text-sm transition-colors ${selectedTags.includes(tag) ? 'bg-accent text-accent-foreground border-accent' : 'border-border hover:border-accent hover:text-accent'}`}
+      <AnimatePresence initial={false}>
+        {showFilters && (
+          <motion.div
+            key="filters"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
+              className="mb-4 flex flex-wrap gap-2 pt-1"
             >
-              {tag}
-            </button>
-          ))}
-        </div>
-      )}
+              {allTags.map(tag => (
+                <motion.button
+                  key={tag}
+                  variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleTagClick(tag)}
+                  className={`px-4 py-2 rounded-full border text-sm transition-colors ${selectedTags.includes(tag) ? 'bg-accent text-accent-foreground border-accent' : 'border-border hover:border-accent hover:text-accent'}`}
+                >
+                  {tag}
+                </motion.button>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full mt-8">
       <AnimatePresence mode="wait">
       {filteredProjects.map((project, index) => (
