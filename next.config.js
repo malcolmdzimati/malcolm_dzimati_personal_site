@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 
+const basePath = '/malcolm_dzimati_personal_site';
+
 module.exports = {
   output: 'export',
-  basePath: '/malcolm_dzimati_personal_site',
-  assetPrefix: '/malcolm_dzimati_personal_site/', // Note the trailing slash
+  basePath,
+  assetPrefix: `${basePath}/`, // Note the trailing slash
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };

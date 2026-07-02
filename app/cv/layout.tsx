@@ -1,12 +1,11 @@
-export default function cvLayout({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) {
-    return (
-      <section className="flex items-center justify-center min-h-screen pt-8 pb-16 px-4 bg-white text-black dark:bg-[#121212] dark:text-white">
-        {children}
-      </section>
-    );
-  }
-  
+export default function CvLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="w-full px-4 md:px-12 lg:px-20 xl:px-32 py-16 sm:py-24">
+      {children}
+    </section>
+  );
+}

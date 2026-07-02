@@ -1,6 +1,5 @@
 "use client";
 
-import { title } from "@/components/primitives";
 import { ProjectCard } from "@/components/ui/project-card";
 import projects from "@/data/projectData.json";
 import { useState } from "react";
@@ -30,41 +29,64 @@ export default function ProjectsPage() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full px-4 md:px-12 lg:px-20 xl:px-32 py-8"
+      className="w-full"
     >
-      <h1 className="text-3xl font-bold mb-2">Projects</h1>
-      <p className="text-muted-foreground mb-8">
-        A collection of things I've built — from solo passion projects to team-based client work.
+      <p className="text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">
+        Projects
+      </p>
+      <h1 className="font-serif italic text-4xl sm:text-5xl mb-4">Things I&rsquo;ve built.</h1>
+      <p className="text-muted-foreground mb-8 max-w-xl">
+        A collection of things I&rsquo;ve built — from solo passion projects to team-based client work.
       </p>
       <button
         onClick={() => setShowFilters(!showFilters)}
-        className="mb-4 px-4 py-2 rounded-md border bg-zinc-100 dark:bg-zinc-800 dark:text-white"
+        className="mb-4 px-4 py-2 rounded-full border border-border text-sm hover:border-accent hover:text-accent transition-colors"
       >
         {showFilters ? 'Hide Filters' : 'Filter Skills'}
       </button>
-      {showFilters && (
-        <div className="mb-4">
-          {allTags.map(tag => (
-            <button
-              key={tag}
-              onClick={() => handleTagClick(tag)}
-              className={`px-4 py-2 m-2 rounded-full border ${selectedTags.includes(tag) ? 'bg-primary text-white' : 'bg-zinc-100 dark:bg-zinc-800 dark:text-white'}`}
+      <AnimatePresence initial={false}>
+        {showFilters && (
+          <motion.div
+            key="filters"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
+              className="mb-4 flex flex-wrap gap-2 pt-1"
             >
-              {tag}
-            </button>
-          ))}
-        </div>
-      )}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full">
+              {allTags.map(tag => (
+                <motion.button
+                  key={tag}
+                  variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleTagClick(tag)}
+                  className={`px-4 py-2 rounded-full border text-sm transition-colors ${selectedTags.includes(tag) ? 'bg-accent text-accent-foreground border-accent' : 'border-border hover:border-accent hover:text-accent'}`}
+                >
+                  {tag}
+                </motion.button>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 w-full mt-8">
       <AnimatePresence mode="wait">
       {filteredProjects.map((project, index) => (
         <motion.div
           key={project.title}
           layout
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
           exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: Math.min((index % 3) * 0.08, 0.24) }}
         >
           <ProjectCard
             title={project.title}

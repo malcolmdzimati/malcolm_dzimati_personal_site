@@ -2,21 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add in global.css */
-html {
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 20 14% 10%;
+    --card: 40 25% 100%;
+    --card-foreground: 20 14% 10%;
+    --border: 24 15% 88%;
+    --muted: 30 20% 94%;
+    --muted-foreground: 20 8% 42%;
+    --accent: 15 65% 47%;
+    --accent-foreground: 40 33% 98%;
+    --radius: 1.25rem;
+  }
+
+  .dark {
+    --background: 20 18% 7%;
+    --foreground: 40 20% 96%;
+    --card: 20 16% 10%;
+    --card-foreground: 40 20% 96%;
+    --border: 20 12% 20%;
+    --muted: 20 12% 14%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 16 72% 58%;
+    --accent-foreground: 20 18% 9%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .perspective {
-    perspective: 1500px;
+  ::selection {
+    background-color: hsl(var(--accent) / 0.25);
   }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
+}
 
-  .parent-container {
-    position: relative;
-  }
+.perspective {
+  perspective: 1500px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.parent-container {
+  position: relative;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
