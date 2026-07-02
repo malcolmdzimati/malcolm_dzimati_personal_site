@@ -2,8 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { TimelineItem } from '@/components/TimelineItem';
-import { CvQuickNav } from '@/components/cv-quick-nav';
+import { QuickNav } from '@/components/quick-nav';
 import { Button } from '@/components/ui/button';
+
+const cvSections = [
+  { id: 'summary', label: 'Summary' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certifications', label: 'Certifications' },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -58,7 +66,7 @@ export default function CVPage() {
         </div>
       </motion.div>
 
-      <CvQuickNav />
+      <QuickNav sections={cvSections} layoutId="cv-nav-underline" />
 
       <div className="space-y-16">
         {/* Summary */}

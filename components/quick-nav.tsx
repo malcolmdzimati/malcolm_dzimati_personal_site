@@ -3,16 +3,18 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const sections = [
-  { id: "summary", label: "Summary" },
-  { id: "experience", label: "Experience" },
-  { id: "education", label: "Education" },
-  { id: "skills", label: "Skills" },
-  { id: "certifications", label: "Certifications" },
-];
+interface Section {
+  id: string;
+  label: string;
+}
 
-export const CvQuickNav = () => {
-  const [active, setActive] = useState(sections[0].id);
+interface QuickNavProps {
+  sections: Section[];
+  layoutId: string;
+}
+
+export const QuickNav = ({ sections, layoutId }: QuickNavProps) => {
+  const [active, setActive] = useState(sections[0]?.id);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,6 +32,7 @@ export const CvQuickNav = () => {
     });
 
     return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -46,7 +49,7 @@ export const CvQuickNav = () => {
                 <span className={isActive ? "text-foreground font-medium" : ""}>{label}</span>
                 {isActive && (
                   <motion.span
-                    layoutId="cv-nav-underline"
+                    layoutId={layoutId}
                     className="absolute left-0 right-0 -bottom-1 h-[2px] rounded-full bg-accent"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />

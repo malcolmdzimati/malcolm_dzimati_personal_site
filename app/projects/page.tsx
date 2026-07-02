@@ -82,10 +82,11 @@ export default function ProjectsPage() {
         <motion.div
           key={project.title}
           layout
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
           exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: Math.min((index % 3) * 0.08, 0.24) }}
         >
           <ProjectCard
             title={project.title}

@@ -1,6 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { QuickNav } from "@/components/quick-nav";
+
+const aboutSections = [
+  { id: "bio", label: "Bio" },
+  { id: "background", label: "Background" },
+];
 
 const background = [
   { label: "Education", value: "BSc & Honours in Computer Science — University of Pretoria" },
@@ -70,7 +76,9 @@ export default function AboutPage() {
         The short version.
       </motion.h1>
 
-      <div className="space-y-6">
+      <QuickNav sections={aboutSections} layoutId="about-nav-underline" />
+
+      <div id="bio" className="space-y-6 scroll-mt-32">
         {paragraphs.map((p, i) => (
           <motion.p
             key={i}
@@ -100,35 +108,37 @@ export default function AboutPage() {
         </motion.p>
       </div>
 
-      <motion.h2
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={fadeUp}
-        className="font-serif text-2xl mt-16 mb-6"
-      >
-        Background
-      </motion.h2>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-        className="space-y-4"
-      >
-        {background.map((item) => (
-          <motion.div
-            key={item.label}
-            variants={fadeUp}
-            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 border-b border-border pb-4"
-          >
-            <span className="text-sm font-medium tracking-wide uppercase text-accent sm:w-32 shrink-0">
-              {item.label}
-            </span>
-            <span className="text-foreground">{item.value}</span>
-          </motion.div>
-        ))}
-      </motion.div>
+      <div id="background" className="scroll-mt-32">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeUp}
+          className="font-serif text-2xl mt-16 mb-6"
+        >
+          Background
+        </motion.h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          className="space-y-4"
+        >
+          {background.map((item) => (
+            <motion.div
+              key={item.label}
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 border-b border-border pb-4"
+            >
+              <span className="text-sm font-medium tracking-wide uppercase text-accent sm:w-32 shrink-0">
+                {item.label}
+              </span>
+              <span className="text-foreground">{item.value}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 }
