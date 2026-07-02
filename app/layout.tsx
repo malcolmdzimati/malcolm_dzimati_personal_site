@@ -1,15 +1,16 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { fontSans } from "@/config/fonts";
+import { fontSans, fontSerif, fontMono } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import AnimatedLayout from "@/components/animatedlayout";
-import { Providers } from "./providers"; // ✅ Import your providers
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "BMD – Batsirai Malcolm Dzimati",
-  description: "Portfolio of Batsirai Malcolm Dzimati – Software Engineer & Innovator",
+  title: "Batsirai Malcolm Dzimati",
+  description: "Software engineer building secure payment systems and scalable property tools.",
   icons: {
-    icon: "/Logo.png", // path to your icon file
+    icon: "/Logo.png",
   },
 };
 
@@ -19,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning // ✅ Helps avoid dark/light mismatch on hydration
-    >
-      <body className={`${fontSans.variable} bg-white text-black dark:bg-[#121212] dark:text-white`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} bg-background text-foreground antialiased`}
+      >
         <Providers themeProps={{ attribute: "class", defaultTheme: "system", enableSystem: true }}>
-          <Navbar />
-          <AnimatedLayout>{children}</AnimatedLayout>
+          <div className="relative flex min-h-screen flex-col">
+            <Navbar />
+            <AnimatedLayout>{children}</AnimatedLayout>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

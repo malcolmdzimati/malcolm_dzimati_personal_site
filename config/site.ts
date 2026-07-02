@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Batsirai Malcolm Dzimati",
+  description: "Software engineer building secure payment systems and scalable property tools.",
   navItems: [
     {
       label: "Home",
@@ -50,8 +50,6 @@ export const siteConfig = {
   links: {
     github: "https://github.com/malcolmdzimati",
     linkedIn: "https://www.linkedin.com/in/batsirai-dzimati-5a541518b/",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    email: "mailto:malcolmdzimati@gmail.com",
   },
 };

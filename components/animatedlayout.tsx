@@ -6,14 +6,15 @@ export default function AnimatedLayout({ children }: { children: React.ReactNode
   const path = usePathname();
 
   return (
-    <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+    <main className="flex-grow">
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={path}
-          initial={{ rotateY: 90, opacity: 0 }}
-          animate={{ rotateY: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="w-full h-full"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full"
         >
           {children}
         </motion.div>

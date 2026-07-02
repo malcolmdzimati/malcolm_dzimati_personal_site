@@ -16,13 +16,11 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
+      <h2 className="font-serif italic text-3xl mb-4">Something went wrong.</h2>
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        onClick={() => reset()}
+        className="px-6 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
       >
         Try again
       </button>

@@ -10,97 +10,101 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  GithubIcon,
-  DiscordIcon,
-  LinkedInIcon,
-  Logo,
-} from "@/components/icons";
+import { GithubIcon, LinkedInIcon, MailIcon, Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const onOpen = () => setIsOpen(true);
   const onClose = () => setIsOpen(false);
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      maxWidth="xl"
+      position="sticky"
+      classNames={{
+        base: "bg-background/80 backdrop-blur-md border-b border-border",
+        wrapper: "px-4 sm:px-6",
+      }}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/" onClick={onClose}>
+        <NavbarBrand as="li" className="gap-2 max-w-fit">
+          <NextLink className="flex justify-start items-center gap-2" href="/" onClick={onClose}>
             <Logo />
-            <p className="font-bold text-inherit">BMD</p>
+            <p className="font-serif italic text-lg text-foreground">Malcolm Dzimati</p>
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
+        <ul className="hidden lg:flex gap-1 justify-start ml-6">
+          {siteConfig.navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <NavbarItem key={item.href}>
+                <NextLink
+                  className="relative px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  href={item.href}
+                >
+                  <span className={isActive ? "text-foreground" : ""}>{item.label}</span>
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-accent"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </NextLink>
+              </NavbarItem>
+            );
+          })}
         </ul>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedIn}>
-            <LinkedInIcon className="text-default-500" />
+      <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
+        <NavbarItem className="hidden sm:flex gap-4">
+          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedIn} className="text-muted-foreground hover:text-accent transition-colors">
+            <LinkedInIcon />
           </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+          <Link isExternal aria-label="Github" href={siteConfig.links.github} className="text-muted-foreground hover:text-accent transition-colors">
+            <GithubIcon />
           </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+          <Link aria-label="Email" href={siteConfig.links.email} className="text-muted-foreground hover:text-accent transition-colors">
+            <MailIcon size={22} />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedIn}>
-            <LinkedInIcon className="text-default-500" />
-          </Link>
-        <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
         <ThemeSwitch />
         <NavbarMenuToggle onClick={isOpen ? onClose : onOpen} />
       </NavbarContent>
 
-      <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+      <NavbarMenu className="bg-background/95 backdrop-blur-md">
+        <div className="mx-4 mt-4 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item) => (
-            <NavbarMenuItem key={`${item.label}`}>
-              <Link
-                color="foreground"
-                href={item.href}
-                size="lg"
-                onClick={onClose}
-              >
+            <NavbarMenuItem key={item.label}>
+              <Link color="foreground" href={item.href} size="lg" onClick={onClose}>
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
+          <div className="flex gap-4 pt-4 mt-2 border-t border-border">
+            <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedIn} className="text-muted-foreground">
+              <LinkedInIcon />
+            </Link>
+            <Link isExternal aria-label="Github" href={siteConfig.links.github} className="text-muted-foreground">
+              <GithubIcon />
+            </Link>
+            <Link aria-label="Email" href={siteConfig.links.email} className="text-muted-foreground">
+              <MailIcon size={22} />
+            </Link>
+          </div>
         </div>
       </NavbarMenu>
     </HeroUINavbar>

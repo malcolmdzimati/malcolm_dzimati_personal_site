@@ -10,12 +10,13 @@ export const Card = React.forwardRef<
   <motion.div
     ref={ref}
     initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-60px" }}
+    whileHover={{ scale: 1.02, y: -4 }}
+    whileTap={{ scale: 0.98 }}
     transition={{ duration: 0.5, type: "spring" }}
     className={cn(
-      "rounded-xl border border-border bg-background text-foreground shadow",
+      "rounded-2xl border border-border bg-card text-card-foreground shadow-sm hover:shadow-lg hover:border-accent/40 transition-shadow",
       className
     )}
     {...props}

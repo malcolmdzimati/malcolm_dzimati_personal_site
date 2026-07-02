@@ -3,25 +3,85 @@ import * as React from "react";
 import { IconSvgProps } from "@/types";
 
 export const Logo: React.FC<IconSvgProps> = ({
-  size = 36,
+  size = 34,
   width,
   height,
   ...props
 }) => (
   <svg
-    className="h-10 w-10"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 1024 1024"
+    viewBox="0 0 40 40"
     fill="none"
     height={size || height}
     width={size || width}
     {...props}
   >
-    {/* Circle background */}
-    <circle cx="512" cy="512" r="512" fill="#000" />
-    {/* Overlapping B and D */}
-    <text x="50%" y="50%" textAnchor="middle" fill="#fff" fontSize="400" fontFamily="Arial, sans-serif" dy=".35em">B</text>
-    <text x="50%" y="50%" textAnchor="middle" fill="#fff" fontSize="400" fontFamily="Arial, sans-serif" dy=".35em" opacity="0.7">D</text>
+    <rect width="40" height="40" rx="12" fill="hsl(var(--accent))" />
+    <text
+      x="50%"
+      y="53%"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fill="hsl(var(--accent-foreground))"
+      fontFamily="var(--font-serif), serif"
+      fontStyle="italic"
+      fontSize="18"
+    >
+      bd
+    </text>
+  </svg>
+);
+
+export const MailIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => (
+  <svg
+    height={size || height}
+    viewBox="0 0 24 24"
+    width={size || width}
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="m3.5 6 8.5 7 8.5-7"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowUpRightIcon: React.FC<IconSvgProps> = ({
+  size = 16,
+  width,
+  height,
+  ...props
+}) => (
+  <svg
+    height={size || height}
+    viewBox="0 0 24 24"
+    width={size || width}
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M7 17 17 7M17 7H8M17 7v9"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
