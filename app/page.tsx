@@ -73,16 +73,31 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <motion.div
             style={{ y: blobY1 }}
-            className="absolute top-8 left-[8%] h-[30rem] w-[30rem] rounded-full bg-accent/40 blur-3xl animate-float-slow"
-          />
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="absolute top-8 left-[8%] h-[30rem] w-[30rem]"
+          >
+            <div className="h-full w-full rounded-full bg-accent/40 blur-3xl animate-float-slow" />
+          </motion.div>
           <motion.div
             style={{ y: blobY2 }}
-            className="absolute top-1/4 right-[6%] h-[26rem] w-[26rem] rounded-full bg-accent/30 blur-3xl animate-float"
-          />
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="absolute top-1/4 right-[6%] h-[26rem] w-[26rem]"
+          >
+            <div className="h-full w-full rounded-full bg-accent/30 blur-3xl animate-float" />
+          </motion.div>
           <motion.div
             style={{ y: blobY3 }}
-            className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-accent/20 blur-3xl animate-float-slow"
-          />
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem]"
+          >
+            <div className="h-full w-full rounded-full bg-accent/20 blur-3xl animate-float-slow" />
+          </motion.div>
         </div>
 
         <motion.p
