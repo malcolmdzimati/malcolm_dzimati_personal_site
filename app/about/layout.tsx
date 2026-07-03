@@ -1,3 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Batsirai Malcolm Dzimati (Malcolm Dzimati) — background, current focus at Vectr Labs, and the Rota Dzimati Group property venture.",
+  alternates: { canonical: "/about" },
+};
+
 export default function AboutLayout({
   children,
 }: {

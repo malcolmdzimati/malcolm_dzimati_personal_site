@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with Batsirai Malcolm Dzimati (Malcolm Dzimati).",
+  alternates: { canonical: "/contact" },
+};
+
 export default function ContactLayout({
   children,
 }: {
