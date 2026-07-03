@@ -54,16 +54,14 @@ export default function CVPage() {
         </p>
         <p className="text-sm text-muted-foreground mt-1">Midrand, Gauteng</p>
         <div className="mt-6 flex justify-center gap-4 flex-wrap">
-          <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/Batsirai-Dzimati-CV.pdf`} download>
-            <Button variant="default">Download PDF</Button>
-          </a>
+          <Button variant="default" disabled title="PDF coming soon">
+            Download PDF
+          </Button>
           <a href="https://github.com/malcolmdzimati" target="_blank" rel="noopener noreferrer">
             <Button variant="outline">GitHub</Button>
           </a>
-          <a href="mailto:malcolmdzimati@gmail.com">
-            <Button variant="outline">Email</Button>
-          </a>
         </div>
+        <p className="text-xs text-muted-foreground mt-3">PDF download coming soon</p>
       </motion.div>
 
       <QuickNav sections={cvSections} layoutId="cv-nav-underline" />

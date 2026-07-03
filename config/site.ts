@@ -50,6 +50,5 @@ export const siteConfig = {
   links: {
     github: "https://github.com/malcolmdzimati",
     linkedIn: "https://www.linkedin.com/in/batsirai-dzimati-5a541518b/",
-    email: "mailto:malcolmdzimati@gmail.com",
   },
 };

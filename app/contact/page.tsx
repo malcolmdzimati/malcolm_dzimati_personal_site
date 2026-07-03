@@ -1,37 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { GithubIcon, LinkedInIcon, ArrowUpRightIcon } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 
-const EMAIL = "malcolmdzimati@gmail.com";
-
 const socials = [
-  {
-    label: "GitHub",
-    handle: "@malcolmdzimati",
-    href: siteConfig.links.github,
-    icon: GithubIcon,
-  },
   {
     label: "LinkedIn",
     handle: "Batsirai Dzimati",
     href: siteConfig.links.linkedIn,
     icon: LinkedInIcon,
   },
+  {
+    label: "GitHub",
+    handle: "@malcolmdzimati",
+    href: siteConfig.links.github,
+    icon: GithubIcon,
+  },
 ];
 
 export default function ContactPage() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(EMAIL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <div className="max-w-3xl mx-auto w-full">
       <motion.p
@@ -57,35 +46,14 @@ export default function ContactPage() {
         className="text-lg text-muted-foreground text-center max-w-xl mx-auto mt-4"
       >
         Whether it&rsquo;s a project, a role, or just a good conversation about tech and property —
-        my inbox is open.
+        reach out on LinkedIn, or take a look at the code on GitHub.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-10 flex flex-col items-center gap-3"
-      >
-        <a
-          href={`mailto:${EMAIL}`}
-          className="font-serif text-2xl sm:text-3xl text-accent hover:underline underline-offset-4 decoration-2 break-all text-center"
-        >
-          {EMAIL}
-        </a>
-        <button
-          onClick={handleCopy}
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors underline-offset-4 hover:underline"
-        >
-          {copied ? "Copied to clipboard" : "Copy email address"}
-        </button>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.6 }}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-14"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12"
       >
         {socials.map(({ label, handle, href, icon: Icon }) => (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer">

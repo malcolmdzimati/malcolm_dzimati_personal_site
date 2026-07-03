@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import { Link } from "@heroui/link";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { GithubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
+import { GithubIcon, LinkedInIcon } from "@/components/icons";
 
 export const Footer = () => {
   return (
@@ -30,9 +30,6 @@ export const Footer = () => {
           </Link>
           <Link isExternal aria-label="Github" href={siteConfig.links.github} className="text-muted-foreground hover:text-accent transition-colors">
             <GithubIcon />
-          </Link>
-          <Link aria-label="Email" href={siteConfig.links.email} className="text-muted-foreground hover:text-accent transition-colors">
-            <MailIcon size={22} />
           </Link>
         </div>
         <p className="text-xs text-muted-foreground">
