@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { FaqJsonLd } from "@/components/faq-json-ld";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,6 +15,7 @@ export default function AboutLayout({
 }) {
   return (
     <section className="w-full px-4 md:px-12 lg:px-20 xl:px-32 py-16 sm:py-24">
+      <FaqJsonLd />
       {children}
     </section>
   );

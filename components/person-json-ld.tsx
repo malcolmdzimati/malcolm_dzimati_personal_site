@@ -6,6 +6,8 @@ export const PersonJsonLd = () => {
     "@type": "Person",
     name: "Batsirai Malcolm Dzimati",
     alternateName: ["Malcolm Dzimati", "Batsirai Dzimati", "Batsirai Malcolm Dzimati"],
+    description:
+      "Software engineer specializing in distributed systems, cloud platforms, and applied AI. Forward Deployed Tech Lead at Vectr Labs; previously payments & cryptography engineering at Investec.",
     url: "https://malcolmdzimati.com",
     image: "https://malcolmdzimati.com/Logo.png",
     jobTitle: "Forward Deployed Tech Lead, AI & Cloud Platforms",
