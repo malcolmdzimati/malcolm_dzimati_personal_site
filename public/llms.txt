@@ -16,7 +16,7 @@ Key facts:
 
 ## Pages
 
-- [About](https://malcolmdzimati.com/about): Background, current focus, and an FAQ covering common questions about who he is and what he does.
+- [About](https://malcolmdzimati.com/about): Background and current focus.
 - [Projects](https://malcolmdzimati.com/projects): Distributed systems, cloud platforms, payments, and property tools he has built.
 - [Digital CV](https://malcolmdzimati.com/cv): Full experience, education, skills, and certifications.
 - [Contact](https://malcolmdzimati.com/contact): Email and social links.

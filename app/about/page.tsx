@@ -2,12 +2,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { QuickNav } from "@/components/quick-nav";
-import { faqs } from "@/data/faq";
 
 const aboutSections = [
   { id: "bio", label: "Bio" },
   { id: "background", label: "Background" },
-  { id: "faq", label: "FAQ" },
 ];
 
 const background = [
@@ -137,32 +135,6 @@ export default function AboutPage() {
                 {item.label}
               </span>
               <span className="text-foreground">{item.value}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      <div id="faq" className="scroll-mt-32">
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          className="font-serif text-2xl mt-16 mb-6"
-        >
-          Frequently asked
-        </motion.h2>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          className="space-y-6"
-        >
-          {faqs.map((faq) => (
-            <motion.div key={faq.question} variants={fadeUp} className="border-b border-border pb-6">
-              <h3 className="font-medium text-foreground mb-2">{faq.question}</h3>
-              <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
             </motion.div>
           ))}
         </motion.div>
