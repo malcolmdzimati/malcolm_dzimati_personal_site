@@ -32,36 +32,6 @@ export const Logo: React.FC<IconSvgProps> = ({
   </svg>
 );
 
-export const MailIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => (
-  <svg
-    height={size || height}
-    viewBox="0 0 24 24"
-    width={size || width}
-    fill="none"
-    {...props}
-  >
-    <path
-      d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="m3.5 6 8.5 7 8.5-7"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 export const ArrowUpRightIcon: React.FC<IconSvgProps> = ({
   size = 16,
   width,

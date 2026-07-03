@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, LinkedInIcon, MailIcon, Logo } from "@/components/icons";
+import { GithubIcon, LinkedInIcon, Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,9 +78,6 @@ export const Navbar = () => {
           <Link isExternal aria-label="Github" href={siteConfig.links.github} className="text-muted-foreground hover:text-accent transition-colors">
             <GithubIcon />
           </Link>
-          <Link aria-label="Email" href={siteConfig.links.email} className="text-muted-foreground hover:text-accent transition-colors">
-            <MailIcon size={22} />
-          </Link>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
@@ -105,9 +102,6 @@ export const Navbar = () => {
             </Link>
             <Link isExternal aria-label="Github" href={siteConfig.links.github} className="text-muted-foreground">
               <GithubIcon />
-            </Link>
-            <Link aria-label="Email" href={siteConfig.links.email} className="text-muted-foreground">
-              <MailIcon size={22} />
             </Link>
           </div>
         </div>
