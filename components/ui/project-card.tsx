@@ -14,6 +14,15 @@ interface ProjectCardProps {
   onClose: () => void;
 }
 
+const contentFade = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, delay, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
@@ -40,11 +49,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <>
-      <button
+      <motion.button
+        layoutId={`card-${title}`}
         onClick={onOpen}
-        className="h-full w-full text-left p-6 flex flex-col rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg hover:border-accent/40 transition-shadow"
+        animate={{ opacity: isOpen ? 0 : 1 }}
+        transition={{ duration: 0.2 }}
+        style={{ borderRadius: 24 }}
+        className="h-full w-full text-left p-6 flex flex-col border border-border bg-card shadow-sm hover:shadow-lg hover:border-accent/40 transition-shadow"
       >
-        <h3 className="text-xl font-serif mb-2">{title}</h3>
+        <motion.h3 layoutId={`card-title-${title}`} className="text-xl font-serif mb-2">
+          {title}
+        </motion.h3>
         <p className="text-sm text-muted-foreground mb-4 flex-grow">{description}</p>
         <div className="flex flex-wrap gap-2 text-xs mb-4">
           {tags.slice(0, 4).map((tag) => (
@@ -62,7 +77,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
         <span className="text-accent text-sm">See more →</span>
-      </button>
+      </motion.button>
 
       <AnimatePresence>
         {isOpen && (
@@ -70,17 +85,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm"
             onClick={onClose}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 12 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 12 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              layoutId={`card-${title}`}
+              style={{ borderRadius: 24 }}
+              transition={{ type: "spring", stiffness: 140, damping: 20, mass: 0.9 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xl"
+              className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto border border-border bg-card p-6 sm:p-8 shadow-xl"
             >
               <button
                 onClick={onClose}
@@ -89,8 +103,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               >
                 <CloseIcon />
               </button>
-              <h3 className="text-2xl font-serif mb-4 pr-8">{title}</h3>
-              <div className="flex flex-wrap gap-2 text-xs mb-5">
+              <motion.h3 layoutId={`card-title-${title}`} className="text-2xl font-serif mb-4 pr-8">
+                {title}
+              </motion.h3>
+              <motion.div
+                custom={0.1}
+                initial="hidden"
+                animate="visible"
+                variants={contentFade}
+                className="flex flex-wrap gap-2 text-xs mb-5"
+              >
                 {tags.map((tag) => (
                   <span
                     key={tag}
@@ -99,10 +121,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     {tag}
                   </span>
                 ))}
-              </div>
-              <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap break-words">
+              </motion.div>
+              <motion.p
+                custom={0.18}
+                initial="hidden"
+                animate="visible"
+                variants={contentFade}
+                className="text-muted-foreground leading-relaxed whitespace-pre-wrap break-words"
+              >
                 {details}
-              </p>
+              </motion.p>
             </motion.div>
           </motion.div>
         )}
