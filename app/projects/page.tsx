@@ -7,8 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 
 export default function ProjectsPage() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+  const [openTitle, setOpenTitle] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
 
@@ -93,14 +92,9 @@ export default function ProjectsPage() {
             description={project.description}
             details={project.details}
             tags={project.tags}
-            isExpanded={expandedIndex === index}
-            onExpand={() =>
-              setExpandedIndex(prev => (prev === index ? null : index))
-            }
-            isFlipped={flippedIndex === index}
-            onFlip={() =>
-              setFlippedIndex(prev => (prev === index ? null : index))
-            }
+            isOpen={openTitle === project.title}
+            onOpen={() => setOpenTitle(project.title)}
+            onClose={() => setOpenTitle(null)}
           />
         </motion.div>
       ))}
