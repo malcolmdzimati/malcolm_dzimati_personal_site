@@ -1,3 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Projects built by Batsirai Malcolm Dzimati (Malcolm Dzimati) — distributed systems, cloud platforms, payments, and property tools.",
+  alternates: { canonical: "/projects" },
+};
+
 export default function ProjectsLayout({
   children,
 }: {

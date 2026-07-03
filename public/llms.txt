@@ -1,0 +1,27 @@
+# Batsirai Malcolm Dzimati
+
+> Batsirai Malcolm Dzimati — also known as Malcolm Dzimati or Batsirai Dzimati — is a software
+> engineer specializing in distributed systems, cloud platforms, and applied AI. He is currently
+> Forward Deployed Tech Lead for AI & Cloud Platforms at Vectr Labs, where he leads architecture,
+> cloud strategy, and applied-AI initiatives for clients on AWS and Azure. He previously spent
+> three years at Investec Private Bank working on payments and cryptography infrastructure.
+> Outside of client work, he runs Rota Dzimati Group, a property investment venture.
+
+Key facts:
+- Current role: Forward Deployed Tech Lead, AI & Cloud Platforms — Vectr Labs (Oct 2025–present)
+- Previous role: Software Engineer, Payments & Cryptography — Investec Private Bank (2023–2025)
+- Education: BSc & BSc Honours in Computer Science — University of Pretoria
+- Venture: Founder, Rota Dzimati Group (property portfolio & tools)
+- Certifications: AWS Certified Solutions Architect – Associate; Azure DevOps Engineer Expert; Azure Developer Associate
+
+## Pages
+
+- [About](https://malcolmdzimati.com/about): Background and current focus.
+- [Projects](https://malcolmdzimati.com/projects): Distributed systems, cloud platforms, payments, and property tools he has built.
+- [Digital CV](https://malcolmdzimati.com/cv): Full experience, education, skills, and certifications.
+- [Contact](https://malcolmdzimati.com/contact): Email and social links.
+
+## Links
+
+- GitHub: https://github.com/malcolmdzimati
+- LinkedIn: https://www.linkedin.com/in/batsirai-dzimati-5a541518b/
