@@ -6,7 +6,7 @@
 Welcome to the source code for my personal website!
 This project is built with **Next.js** and serves as a platform to showcase my professional profile, projects, and work as a software engineer.
 
-🔗 **Live site:** [malcolmdzimati.github.io/malcolm_dzimati_personal_site](https://malcolmdzimati.github.io/malcolm_dzimati_personal_site/)
+🔗 **Live site:** [malcolmdzimati.com](https://malcolmdzimati.com/)
 
 ## ✨ Features
 
@@ -15,7 +15,7 @@ This project is built with **Next.js** and serves as a platform to showcase my p
 - Component library powered by [HeroUI](https://www.heroui.com/)
 - Pages for Home, About, Portfolio (Projects), Digital CV, and Contact
 - CI/CD pipeline via GitHub Actions, with CodeQL static analysis on every push
-- Deployed automatically to GitHub Pages
+- Deployed automatically to GitHub Pages behind a custom domain (malcolmdzimati.com)
 - Content-driven project cards sourced from a simple JSON data file for easy updates
 
 ## 🧱 Tech Stack
