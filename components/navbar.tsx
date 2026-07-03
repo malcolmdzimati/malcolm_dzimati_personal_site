@@ -13,7 +13,7 @@ import { Link } from "@heroui/link";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -22,18 +22,18 @@ import { GithubIcon, LinkedInIcon, MailIcon, Logo } from "@/components/icons";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const onOpen = () => setIsOpen(true);
   const onClose = () => setIsOpen(false);
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-    >
     <HeroUINavbar
       maxWidth="xl"
       position="sticky"
+      isMenuOpen={isOpen}
+      onMenuOpenChange={setIsOpen}
       classNames={{
         base: "bg-background/80 backdrop-blur-md border-b border-border",
         wrapper: "px-4 sm:px-6",
@@ -87,7 +87,7 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <ThemeSwitch />
-        <NavbarMenuToggle onClick={isOpen ? onClose : onOpen} />
+        <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu className="bg-background/95 backdrop-blur-md">
@@ -113,6 +113,5 @@ export const Navbar = () => {
         </div>
       </NavbarMenu>
     </HeroUINavbar>
-    </motion.div>
   );
 };
